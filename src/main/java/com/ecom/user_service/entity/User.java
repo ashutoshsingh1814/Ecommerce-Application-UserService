@@ -1,0 +1,21 @@
+package com.ecom.user_service.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+public class User {
+
+    // JPA requires a public or protected no-argument constructor
+    public User() {
+    }
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    private String name;
+    @Email
+    @Column(unique = true)
+    private String email;
+}
