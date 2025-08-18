@@ -8,6 +8,9 @@ import jakarta.persistence.Id;
 @Entity
 public class User {
 
+    // JPA requires a public or protected no-argument constructor
+    public User() {
+    }
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
